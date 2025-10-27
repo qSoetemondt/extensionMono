@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authentification Twitch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🔐 Authentification Twitch</h1>
+      <p class="subtitle">Connectez-vous pour envoyer des messages automatiques</p>
+    </div>
+    
+    <div class="status-section">
+      <div id="authStatus">
+        <p>Prêt à vous connecter</p>
+      </div>
+    </div>
+    
+    <div class="buttons-section">
+      <button id="authBtn" class="btn btn-primary">
+        🔑 Se connecter avec Twitch
+      </button>
+      <button id="logoutBtn" class="btn btn-secondary" style="display: none;">
+        🚪 Se déconnecter
+      </button>
+    </div>
+    
+    <div class="info-section">
+      <h3>📋 Permissions requises :</h3>
+      <ul>
+        <li>Lire les messages du chat</li>
+        <li>Envoyer des messages dans le chat</li>
+      </ul>
+    </div>
+  </div>
+  
+  <script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitch Live Notifier</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🎮 Twitch Monitor</h1>
+      <p class="subtitle">Live de Monodie</p>
+    </div>
+    
+    <div class="status-section">
+      <div id="statusIndicator" class="status-indicator">
+        <span id="statusDot" class="status-dot"></span>
+        <span id="statusText">Vérification...</span>
+      </div>
+    </div>
+    
+    <div class="controls-section">
+      <label class="switch">
+        <input type="checkbox" id="monitoringToggle" checked>
+        <span class="slider"></span>
+      </label>
+      <span class="control-label">Surveillance active</span>
+    </div>
+    
+    <div class="settings-section">
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="autoOpen" checked>
+          <span>Ouvrir automatiquement le live</span>
+        </label>
+      </div>
+      
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="muted" checked>
+          <span>Ouvrir avec le son coupé</span>
+        </label>
+      </div>
+      
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="autoMessages" checked>
+          <span>Envoyer des messages automatiques</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="buttons-section">
+      <button id="openOptions" class="btn btn-secondary">
+        ⚙️ Paramètres
+      </button>
+      <button id="openLive" class="btn btn-primary">
+        📺 Aller au live
+      </button>
+    </div>
+    
+    <div id="authSection" class="settings-section">
+      <h3>🔐 Authentification Twitch</h3>
+      <div id="authStatus" style="margin: 10px 0;">
+        <p style="font-size: 13px; color: #666;">Vérification de l'authentification...</p>
+      </div>
+      <button id="authBtn" class="btn btn-primary" style="width: 100%;">
+        🔑 Se connecter avec Twitch
+      </button>
+      <button id="logoutBtn" class="btn btn-secondary" style="width: 100%; display: none;">
+        🚪 Se déconnecter
+      </button>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
+

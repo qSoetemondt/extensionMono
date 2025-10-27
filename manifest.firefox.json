@@ -1,0 +1,72 @@
+{
+  "manifest_version": 3,
+  "name": "Twitch Live Notifier - Monodie",
+  "version": "1.0.0",
+  "description": "Notification automatique et surveillance du live de Monodie sur Twitch",
+  "permissions": [
+    "notifications",
+    "alarms",
+    "storage",
+    "tabs",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.twitch.tv/*",
+    "https://api.twitch.tv/*",
+    "https://decapi.me/*",
+    "https://quilegan.ovh/*",
+    "http://quilegan.ovh/*"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.twitch.tv/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://quilegan.ovh/*",
+        "http://quilegan.ovh/*"
+      ],
+      "js": [
+        "token-listener.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "Twitch Live Notifier"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "twitch-live-notifier-monodie@example.com",
+      "strict_min_version": "102.0"
+    }
+  }
+}

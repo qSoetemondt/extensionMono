@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paramètres - Twitch Live Notifier</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container options-container">
+    <div class="header">
+      <h1>⚙️ Paramètres</h1>
+      <p class="subtitle">Personnalisez votre extension</p>
+    </div>
+    
+    <div class="settings-section">
+      <h2>💬 Messages automatiques</h2>
+      <p class="info-text">
+        Les messages seront envoyés automatiquement pendant le live.
+      </p>
+      
+      <div class="input-section">
+        <label for="minInterval">Intervalle minimum entre les messages (en minutes):</label>
+        <input type="number" id="minInterval" min="1" max="120" value="15" />
+      </div>
+      
+      <div class="input-section">
+        <label for="maxInterval">Intervalle maximum entre les messages (en minutes):</label>
+        <input type="number" id="maxInterval" min="1" max="120" value="40" />
+      </div>
+      
+      <p class="info-text" style="margin-top: 15px;">
+        Les messages seront envoyés à des intervalles aléatoires entre ces deux valeurs.
+      </p>
+      
+      <div class="messages-list-section">
+        <label>Liste des messages:</label>
+        <div id="messagesList"></div>
+        <button id="addMessageBtn" class="btn btn-secondary">+ Ajouter un message</button>
+      </div>
+    </div>
+    
+    <div class="settings-section">
+      <h2>🔔 Notifications</h2>
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="notifyOnLive" checked>
+          <span>Me notifier quand le live démarre</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="settings-section">
+      <h2>🌐 Twitch</h2>
+      <p class="info-text">
+        Surveille le live de: <strong>Monodie</strong>
+      </p>
+    </div>
+    
+    <div class="buttons-section">
+      <button id="saveBtn" class="btn btn-primary">
+        💾 Enregistrer
+      </button>
+      <button id="resetBtn" class="btn btn-secondary">
+        🔄 Réinitialiser
+      </button>
+    </div>
+    
+    <div id="statusMessage" class="status-message"></div>
+  </div>
+  
+  <script src="options.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,16 @@
+# Configuration sensible
+config.js
+*.env
+.env.local
+
+# IDs et secrets
+*.secret
+secrets/
+
+# Icônes générées
+icons/*.png
+
+# Files de l'utilisateur
+*.local
+*.backup
+
